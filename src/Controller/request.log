@@ -1,0 +1,24 @@
+Array
+(
+    [attachment1] => Array
+        (
+            [name] => file.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\wamp64\tmp\phpAA10.tmp
+            [error] => 0
+            [size] => 270104
+        )
+
+)
+Array
+(
+    [attachment1] => Array
+        (
+            [name] => Screenshot_20191211_180831_com.bumble.app.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\wamp64\tmp\php1F60.tmp
+            [error] => 0
+            [size] => 112810
+        )
+
+)

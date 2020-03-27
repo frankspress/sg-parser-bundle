@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="sg_parser_bundle.email_handler" class="Frankspress\SgParserBundle\Handler\EmailHandler" public="true">
+            <argument type="service" id="validator"/>
+            <argument type="service" id="request_stack"/>
+        </service>
+
+        <service id="sg_parser_bundle.upload_handler" class="Frankspress\SgParserBundle\Handler\UploadHandler" public="true">
+            <argument type="service" id="validator"/>
+            <argument type="service" id="request_stack"/>
+        </service>
+
+        <service id="sg_parser_bundle.new_email" class="Frankspress\SgParserBundle\Email\NewEmail" public="true">
+        </service>
+
+        <service id="sg_parser_bundle.new_attachment" class="Frankspress\SgParserBundle\Attachment\NewAttachment" public="true">
+        </service>
+
+        <service id="sg_parser_bundle.api_parser" class="Frankspress\SgParserBundle\Controller\ApiParser" public="true">
+            <argument type="service" id="sg_parser_bundle.email_handler"/>
+            <argument type="service" id="sg_parser_bundle.upload_handler"/>
+            <argument type="service" id="request_stack"/>
+            <argument type="service" id="sg_parser_bundle.new_email"/>
+            <argument type="service" id="sg_parser_bundle.new_attachment" />
+            <argument type="service" id="event_dispatcher" on-invalid="null"/>
+        </service>
+
+
+
+    </services>
+</container>
