@@ -14,6 +14,9 @@ Installation
 composer require frankspress/sg-parser-bundle
 ```
 
+Usage
+------------
+Create a new route and set the prefix to configure your new webhook point.
 ```yaml
 # app/routes/sg_api_parser.yml
 
@@ -23,7 +26,7 @@ sg_api_parsers:
     trailing_slash_on_root: false
 ```
 
-
+Create a new EventSubscriber. This will automatically be called when a new email is sent to your Api point.
 
 ```php
 namespace App\EventSubscriber;
@@ -57,9 +60,8 @@ class SgParseEmail implements EventSubscriberInterface
 ```
 
 
-
-
-This is the default configuration for this bundle. To modify any of these parameters create a config file 
+To modify any of the default parameters create a config file and change any of the following. 
+For instance, if you want the bundle to allow only specific mime types then you can list them in `mime_types`.
 
 #### sg_parser.yaml
 
