@@ -16,7 +16,7 @@ composer require frankspress/sg-parser-bundle
 
 Usage
 ------------
-Create a new route and set the prefix to configure your new webhook point.
+Create a new route and set the `prefix` to configure your new webhook point.
 ```yaml
 # app/routes/sg_api_parser.yml
 
