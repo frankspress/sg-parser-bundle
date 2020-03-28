@@ -31,12 +31,10 @@ Create a new EventSubscriber. This will automatically be called when a new email
 ```php
 namespace App\EventSubscriber;
 
-
 use Frankspress\SgParserBundle\Attachment\NewAttachment;
 use Frankspress\SgParserBundle\Event\ParserApiCompleteEvent;
 use Frankspress\SgParserBundle\Event\SgParserEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-
 
 class SgParseEmail implements EventSubscriberInterface
 {
