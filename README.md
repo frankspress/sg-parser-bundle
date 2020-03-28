@@ -96,3 +96,37 @@ frankspress_sg_parser:
 
 
 ```
+
+## Basic Example
+
+```php
+  // ...
+  public function onParserApiComplete(ParserApiCompleteEvent $event )
+  {
+    $email = $event->getNewEmail();
+    $attachments = $event->getNewAttachment();
+
+   /* 
+    $email->getAttachment();
+    $email->getSubject();
+    $email->getSenderEmail();
+    $email->getSenderName();
+    $email->getBody(); 
+    */
+    if ( !empty($email->getAttachment() ) ) {
+
+      foreach ($attachments as $attachment ) {
+        /*
+        $attachment->getFile();
+        $attachment->getFileName();
+        $attachment->getOriginalFileName();
+        $attachment->error();
+        $attachment->getFilePath();
+        $attachment->getSize();
+        $attachment->getType();
+        */
+      }
+    }
+
+  }
+```
