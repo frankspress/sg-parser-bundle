@@ -31,7 +31,5 @@
             <argument type="service" id="event_dispatcher" on-invalid="null"/>
         </service>
 
-
-
     </services>
 </container>

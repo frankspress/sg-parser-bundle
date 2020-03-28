@@ -24,17 +24,21 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+
                 ->arrayNode('email')
+                ->addDefaultsIfNotSet()
                     ->children()
                         ->integerNode('max_body_length')->defaultValue(3000)->info('Int, max body length allowed')->end()
-                        ->booleanNode('raw_response')->defaultValue(true)->info('Returns only the actual email or direct response')->end()
-                        ->booleanNode('raw_subject')->defaultValue(true)->info('Strips RE: from email subject')->end()
+                        ->booleanNode('raw_response')->defaultFalse()->info('Returns only the actual email or direct response')->end()
+                        ->booleanNode('raw_subject')->defaultFalse()->info('Strips RE: from email subject')->end()
                     ->end()
                 ->end()
+
                 ->arrayNode('attachment')
+                ->addDefaultsIfNotSet()
                     ->children()
-                        ->booleanNode('handle_attachment')->defaultTrue()->info('Bool, Attachment download is disabled by default')->end()
-                        ->scalarNode('file_upload_size')->defaultValue('3M')->info('string, Upload size, 1M, 5M etc., see Symfony File Validator for more info')->end()
+                        ->booleanNode('handle_attachment')->defaultFalse()->info('Bool, Attachment download is disabled by default')->end()
+                        ->scalarNode('file_upload_size')->cannotBeEmpty()->defaultValue('3M')->info('string, Upload size, 1M, 5M etc., see Symfony File Validator for more info')->end()
                         ->booleanNode('php_injection')->defaultFalse()->info('Bool, Checks for malicious php code')->end()
                         ->arrayNode('mime_types')
                             ->scalarPrototype()->end()

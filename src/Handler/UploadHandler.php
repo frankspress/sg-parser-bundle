@@ -72,29 +72,6 @@ class UploadHandler
 
     public function addAttachment() {
 
-
-//        $attachmentContainer = [];
-//        $attachmentList = json_decode( $this->request->getCurrentRequest()->get('attachment-info') );
-//
-//        $file = $this->request->getCurrentRequest()->files->get('img');
-//
-//        /** @var File $file */
-//
-//        $attachment = new NewAttachment();
-//        $attachment->setFileName( pathinfo($file->getFilename(), PATHINFO_FILENAME) . '.' . $file->guessExtension() );
-//        $attachment->setType( $file->guessExtension() );
-//        $attachment->setFilePath( $file->getPathname() );
-//        $attachment->setSize( $file->getSize() );
-//
-//
-//        if ( ! $this->fileValidator($file) || ! $this->phpInjectionCheck($file) ) {
-//            $attachment->setError( $this->violationMessage );
-//        }
-//
-//        $attachmentContainer [] = $attachment;
-//
-//        return $attachmentContainer;
-
         $attachmentContainer = [];
         $attachmentList =   json_decode( $this->request->getCurrentRequest()->get('attachment-info'));
 

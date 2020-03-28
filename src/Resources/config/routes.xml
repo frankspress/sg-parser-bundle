@@ -6,4 +6,5 @@
 
     <route id="sg_api_parser" controller="sg_parser_bundle.api_parser:sgparser" path="/"  >
     </route>
+
 </routes>

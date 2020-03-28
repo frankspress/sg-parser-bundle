@@ -40,8 +40,6 @@ class ApiParser
 
     public function sgParser() {
 
-        $milliseconds = round(microtime(true) * 1000);
-
         $newEmail = $this->emailHandler->parseEmail();
         $newAttachment = [];
 
@@ -54,9 +52,7 @@ class ApiParser
             $this->eventDispatcher->dispatch( $event,SgParserEvents::PARSER_API );
         }
 
-        $milliseconds2 = round(microtime(true) * 1000);
-     //   file_put_contents(__DIR__."/timeee.txt",  'time init:'. $milliseconds.' time done:'.$milliseconds2  );
-        return new JsonResponse(['success'], 200);
+        return new JsonResponse([], 200);
     }
 
 
