@@ -57,11 +57,11 @@ class SgParseEmail implements EventSubscriberInterface
 }
 ```
 
-
+#### Default Config
 To modify any of the default parameters create a config file and change any of the following. 
 For instance, if you want the bundle to allow only specific mime types then you can list them in `mime_types`.
 
-#### sg_parser.yaml
+
 
 ```yaml
 # app/config/sg_parser.yml
@@ -130,3 +130,7 @@ frankspress_sg_parser:
 
   }
 ```
+Methods are pretty much self explanatory. `$email->getAttachments()` returns an array with the attachment titles not the actual attachments.
+
+`$attachments` comes as an array of attachments. From the example above you can see that for each attachment you can load its actual file with `$attachment->getFile()` or get it's filename with `$attachment->getFileName()`. One important note about `$attachment->error()`, if this is empty the file has passed validation, if it's not empty then only the first encountered error will be recorded.
+
