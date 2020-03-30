@@ -1,6 +1,6 @@
 {
   "name": "frankspress/sg-parser-bundle",
-  "description": "Parses and validates SendGrid email content sent to the WebHook - Symfony 5",
+  "description": "Parses and validates SendGrid inbound email content sent to the WebHook - Symfony 5",
   "type": "symfony-bundle",
   "license": "MIT",
   "authors": [
